@@ -7,6 +7,7 @@ import './style.css'
 function Home() {
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [selectedRating, setSelectedRating ] = useState()
+  const [selectedPrice, setSelectedPrice] = useState([1000,5000])
 
   const [cuisines, setCuisines] = useState([
     { id: 1, checked: false, label: 'American' },
@@ -33,6 +34,8 @@ function Home() {
       </div>
      )
 
+     const handleChangePrice =(event, value) => setSelectedPrice(value)
+
   return (
     <div className="home">
         {/*Search bar */}
@@ -41,11 +44,13 @@ function Home() {
            <div className="home_panel-wrap">
              <FilterPannel
              cuisines={cuisines}
-              selectToggle={handleSelectedCategory} 
-              selectedCategory ={selectedCategory}
-              selectRating={handleSelectedRating}
+              selectToggle= {handleSelectedCategory} 
+              selectedCategory={selectedCategory}
+              selectRating= {handleSelectedRating}
               selectedRating={selectedRating}
               changeChecked={handleChangeChecked}
+              selectedPrice={selectedPrice}
+              changedPrice={handleChangePrice}
                />
            </div> 
             <div className="home_list-wrap">
