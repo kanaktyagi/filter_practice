@@ -1,7 +1,12 @@
 import React from 'react'
+import './styles.css';
 
-export const EmptyView = () => {
+  const EmptyList = () => {
   return (
-    <div>EmptyView</div>
+    <div className='emptyView-wrap'>
+    <img src='/images/gif/empty.gif' alt='' />
+  </div>
   )
 }
+
+export default EmptyList
